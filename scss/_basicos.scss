@@ -1,0 +1,44 @@
+/* npm run watch-css */
+
+/*Basicos*/
+
+@import "_colors";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: $mainbg;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 480px){
+    main{
+      padding-top: 1%;
+    }
+    body{
+      width: 100vw;
+    }
+  }
+  
+  p{
+    margin: 10px;
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    font-size: 16px;
+  }
+  
+  header{
+    position: sticky;
+    top: 0;
+    background-color: $menubg;
+  }
+  
+
+  
