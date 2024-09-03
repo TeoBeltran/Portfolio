@@ -4,31 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teo Beltrán Nanziot</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/Style.css">
 </head>
 <body id="top">
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#conocimientos">Conocimientos</a></li>
 
-                <div>
-                    <a href="https://www.linkedin.com/in/teo-beltran-nanziot/" target="_blank"><img src="img/redes/linkedin.png" alt="LinkedIn"></a>
-                    <a href="https://github.com/TeoBeltran/" target="_blank"><img src="img/redes/github.png" alt="GitHub"></a>
-                    <!--a href="mailto:teo.belnan@gmail.com" target="_blank"><img src="img/redes/gmail.png" alt="Gmail"></a-->
-                </div>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+            <a class="navbar-brand text-white" href="#">Teo Beltrán Nanziot</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#experiencia">Experiencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#conocimientos">Conocimientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#proyectos">Proyectos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link social-link" href="https://drive.google.com/file/d/1GX6pd2cSs-j6RKhxhhMkkKCmmjwsHHCA/view?usp=drive_link" target="_blank">
+                            <img src="img/redes/CV.png" alt="CV" class="social-icon">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link social-link" href="https://www.linkedin.com/in/teo-beltran-nanziot/" target="_blank">
+                            <img src="img/redes/linkedin.png" alt="LinkedIn" class="social-icon">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link social-link" href="https://github.com/TeoBeltran/" target="_blank">
+                            <img src="img/redes/github.png" alt="GitHub" class="social-icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
+        
     </header>
 
     <main>
-        <div class="secciones">
+        <div class="secciones" id="inicio">
             <div class="div1">
-                <h1>Teo Beltrán Nanziot</h1>
-                <h2>Técnico Superior en Programación</h2>
+                <h1>Teo Beltrán Nanziot</h1> <br>
+                <h2>Técnico Superior en Programación</h2> <br>
                 <p>Especialista en mesa de ayuda </p>
                 <p>y Soporte Técnico IT</p>
             </div>
@@ -50,7 +78,9 @@
             </div>
         </div>
 
-        <div class="secciones" id="experiencia">
+        <p id="experiencia">.</p>
+
+        <div class="secciones">
             <div class="div1">1</div>
             <div class="div2">
                 <h3>Experiencia</h3>
@@ -87,28 +117,37 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <p id="conocimientos">.</p>
+
+        <div class="secciones">
+            <div class="div1">1</div>
+            <div class="div2">
+                <h3>Conocimientos</h3>
+                <div>
                     <div class="expCard-item">
-                        <div class="date">2000 — 20NN</div>
                         <div class="details">
-                            <h4>Conocimientos adicionales</h4>
-                            <p>
-                                Conocimientos adquiridos relacionados a la programación e informática.
-                            </p>
+                            <h4>Programación</h4> <br>
                             <div class="tags">
-                                <span>C</span>
                                 <span>C++</span>
                                 <span>C#</span>
-                                <span>SQL</span>
+                                <span>Java</span>
+                                <span>JavaScript</span>
+                                <span>Python</span>
+                            </div> <br>
+                            <h4>Desarrollo Web y Frontend</h4> <br>
+                            <div class="tags">
                                 <span>HTML</span>
                                 <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Java</span>
-                            </div>
-                            <p>
-                                Conocimientos básicos.
-                            </p>
+                                <span>JQuery</span>
+                            </div> <br>
+                            <h4>Base de Datos y Herramientas</h4> <br>
                             <div class="tags">
-                                <span>Python</span>
+                                <span>SQL</span>
+                                <span>GitHub</span>
                             </div>
                         </div>
                     </div>
@@ -116,16 +155,18 @@
             </div>
         </div>
 
-        <div class="secciones" id="proyectos">
+        <p id="proyectos">.</p>
+
+        <div class="secciones">
             <div class="div1">1</div>
             <div class="div2">
                 <h3>Proyectos</h3>
                 <div>
                     <div class="expCard-item">
-                        <img src="web.png" alt="web">
+                        <img src="img/proy/Portfolio.png" alt="favicon">
                         <div class="details">
                             <h4>Portfolio</h4>
-                            <p>Página web diseñada para mostrar mi portfolio y mis conocimientos, habilidades y experiencia</p>
+                            <p>Página web diseñada para mostrar mi portfolio con mis conocimientos, habilidades y experiencia.</p>
                             <div class="tags">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -137,7 +178,7 @@
                         <img src="img/proy/rpg.png" alt="juego">
                         <div class="details">
                             <h4>Juego</h4>
-                            <p>Un juego desarrollado para la materia Laboratorio de Computación 2</p>
+                            <p>Un pequeño juego estilo RPG en el que hay que avanzar en una mazmorra hasta llegar al final.</p>
                             <div class="tags">
                                 <span>C++</span>
                                 <span>SFML Library</span>
@@ -145,12 +186,13 @@
                         </div>
                     </div>
                     <div class="expCard-item">
-                        <img src="searchAu.png" alt="searchAu">
+                        <img src="img/proy/SearchAudit.png" alt="searchAu">
                         <div class="details">
                             <h4>SearchAudit</h4>
-                            <p>Programa que busca un archivo local en la computadora, realizado para el trabajo.</p>
-                            <p>Lee el archivo de auditoria con su formato, y encuentra en el mismo si hubo algún error de caracteres o si hay algún ticket con errores, 
-                                como pueden ser falta de pago, falta de vuelto, cierre con errores, entre otros.</p>
+                            <p>Programa que busca un archivo local en la computadora relacionado a la auditoria de un punto de venta.
+                                El programa detecta si el ticket está completo o está con error.
+                                <!--Encuentra en el mismo si hubo algún error de caracteres o si hay algún ticket con errores, 
+                                como pueden ser falta de pago, falta de vuelto, cierre con errores, entre otros.--></p>
                             <div class="tags">
                                 <span>C#</span>
                             </div>
@@ -161,9 +203,8 @@
                         <div class="details">
                             <h4>Hexa Bank</h4>
                             <p>Aplicación Web similar a Home Banking</p>
-                            <p>Realizado Durante la última materia de la carrera de Técnico Superior en Programación</p>
                             <p>Aplicación donde se pueden dar de alta clientes y cuentas, hacer transferencias entre los mismos
-                                tanto como pedir y pagar préstamos.
+                                y acceder a la función de prestamos, pudiendo pedir y/o pagar préstamos.
                             </p>
                             <div class="tags">
                                 <span>Java</span>
@@ -174,12 +215,28 @@
                         </div>
                     </div>
                     <div class="expCard-item">
-                        <img src="sysVta.png" alt="SysVta">
+                        <img src="img/proy/Ventas.png" alt="SysVta">
                         <div class="details">
                             <h4>Sistema ventas</h4>
-                            <p>Sistema de ventas básico  para uso personal, todavía en progreso</p>
+                            <p>Sistema de ventas básico  para uso personal. Se encuentra en progreso</p>
                             <div class="tags">
                                 <span>C#</span>
+                                <span>Javascript</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expCard-item">
+                        <img src="img/proy/Ventas.png" alt="SysVta">
+                        <div class="details">
+                            <h4>Gestión de Artículos</h4>
+                            <p>Sistema donde se pueden agregar, modificar y eliminar artículos.</p>
+                            <p>Incluye una vista apuntada al usuario que simula un carrito de compra.</p>
+                            <div class="tags">
+                                <span>C#</span>
+                                <span>C++</span>
                                 <span>SQL</span>
                             </div>
                         </div>
