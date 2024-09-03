@@ -4,13 +4,13 @@ body {
     font-family: Arial, sans-serif;
     background-color: #273244;
     color: #ccd6f6;
-    margin-top: 100px;
+    /*margin-top: 100px;*/
 }
 
 header {
     background-color: #333;
     padding: 10px 0;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     left: 0;
@@ -130,6 +130,38 @@ header {
         border-radius: 5px;
         font-size: 0.9em;
         border: 1px solid #ffffff;
+    }
+}
+
+.tagsRepo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    a {
+        background-color: #273244;
+        color: #707de1;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        border: 1px solid #707de1;
+        text-decoration: none;
+    }
+}
+
+.tagsRepoX {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    span {
+        background-color: #273244;
+        color: #f86336;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        border: 1px solid #f86336;
+        text-decoration: none;
     }
 }
 
