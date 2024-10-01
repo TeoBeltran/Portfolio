@@ -37,7 +37,44 @@ header {
     }
 }
 
-.secciones {
+.aboutMe {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin: 50px;
+
+    .div1 {
+        grid-column: span 2 / span 2;
+        /*border: 2px solid #000;*/
+        margin: 5px;
+        padding: 20px;
+
+        .fototeo {
+            margin: 0 auto; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                border-radius: 30px;
+                max-width: 70%;
+                height: auto;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+    .div2 {
+        grid-column: span 3 / span 3;
+        grid-column-start: 3;
+        /*border: 2px solid #000;*/
+        margin: 5px;
+        padding: 20px;
+    }
+}
+
+.experiencia {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -211,7 +248,7 @@ header {
 .parteB {
     grid-column: span 3; /* De 5 ocupa 3 */
 }
-  
+
 
 
 
@@ -296,4 +333,87 @@ p {
     border-radius: 10px;
 }
 
+
+
+/* Responsive --------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Inicio */
+    .aboutMe {
+        grid-template-columns: 1fr;
+    }
+    .aboutMe .div1,
+    .aboutMe .div2 {
+        grid-column: 1;
+    }
+
+    /* Exepriencia */
+    .experiencia {
+        grid-template-columns: 1fr;
+    }
+    
+    .experiencia .div1 {
+        display: none;
+    }
+
+    .experiencia .div2 {
+        grid-column: 1;
+        padding: 10px;
+    }
+
+    .experiencia .expCard-item:hover {
+        transform: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    /* Conocimientos */
+    #conocimientos .conocimientos1 {
+        grid-template-columns: 1fr;
+    }
+
+    .parteX h4 {
+        text-align: center;
+    }
+
+    .iconText {
+        opacity: 1;
+    }
+
+    .programIcon img:hover {
+        background: none;
+        box-shadow: none;
+        border-radius: none;
+    }
+
+    /* Proyectos */
+    .proyectoS .seccionesX {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .parteA, .parteB {
+        width: 100%;
+    }
+
+    .parteB {
+        order: 1;
+    }
+
+    .parteA {
+        order: 2;
+    }
+
+    .expCard-item {
+        transition: none;
+    }
+
+    .expCard-item:hover {
+        background-color: transparent;
+        transform: none;
+        border-radius: none;
+        box-shadow: none;
+    }
+
+}
 
