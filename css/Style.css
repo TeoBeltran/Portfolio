@@ -245,6 +245,13 @@ header {
     grid-column: span 2; /* De 5 ocupa 2 */
 }
 
+.parteA2 {
+    padding: 20px;
+    grid-column: span 2; /* De 5 ocupa 2 */
+    height: 500px;
+    overflow: hidden;
+}
+
 .parteB {
     grid-column: span 3; /* De 5 ocupa 3 */
 }
