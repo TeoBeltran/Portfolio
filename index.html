@@ -5,573 +5,448 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teo Beltrán</title>
     <link rel="icon" href="img/favicon/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/Style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .theme-switch {
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+    
+        /* Switch back dark */
+        .theme-switch.dark-mode {
+            background-color: #333;
+        }
+    
+        /* Switch button */
+        .switch-handle {
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+    
+        .theme-switch.dark-mode .switch-handle {
+            transform: translateX(30px);
+        }
+    
+        /* Body dark */
+        body.dark-mode {
+            /*background-color: #121212;*/
+            background-color: #2d2d2d; /* estilo Sidebar dark */
+            color: #ffffff;
+            transition: background-color 0.5s, color 0.5s;
+        }
+    
+        body.dark-mode .bg-gray-100 {
+            background-color: #121212;
+        }
+    
+        /* Cards dark */
+        body.dark-mode .bg-white {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+    
+        /* Sidebar dark */
+        body.dark-mode .bg-gray-800 {
+            /*background-color: #2d2d2d;*/
+            background-color: #121212; /* estilo Body dark */
+        }
+    
+        /* Texto dark */
+        body.dark-mode .text-gray-600,
+        body.dark-mode .text-gray-700 {
+            color: #e0e0e0;
+        }
+    
+        /* Hover dark */
+        body.dark-mode .hover\:bg-gray-700:hover {
+            background-color: #3d3d3d;
+        }
+    
+        /* Hover experiencias dark */
+        body.dark-mode .hover\:bg-gray-50:hover {
+            background-color: #111111;
+        }
+    </style>
+    
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Teo Beltrán Nanziot</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#inicio">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#experiencia">Experiencia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#conocimientos">Conocimientos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#proyectos">Proyectos</a>
+<body class="bg-gray-300">
+    <div class="flex">
+        <aside class="fixed w-64 h-screen bg-gray-800 text-white p-6 overflow-y-auto">
+            <nav>
+                <div class="mb-8">
+                    <img src="img/redes/foto.png" alt="Profile" class="w-30 h-30 rounded-full mx-auto mb-4 object-cover">
+                </div>
+                <ul class="space-y-4">
+                    <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded">Inicio</a></li>
+                    <li><a href="#sobre" class="block py-2 px-4 hover:bg-gray-700 rounded">Sobre mí</a></li>
+                    <li><a href="#portfolio" class="block py-2 px-4 hover:bg-gray-700 rounded">Portfolio</a></li>
+                    <li><a href="#experiencia" class="block py-2 px-4 hover:bg-gray-700 rounded">Experiencia</a></li>
+                    <li><a href="#skills" class="block py-2 px-4 hover:bg-gray-700 rounded">Skills</a></li>
+                    <li><a href="#contacto" class="block py-2 px-4 hover:bg-gray-700 rounded">Contacto</a></li>
+                    <li class="flex items-center justify-center mt-8">
+                        <div id="theme-toggle" class="theme-switch">
+                            <div class="switch-handle"></div>
+                        </div>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link social-link" href="https://drive.google.com/file/d/1iNvorGdzgFm1kifu4zkK3NGxXJ1aq2nw/view?usp=drive_link" target="_blank">
-                            
-                            <img src="img/redes/cv.png" alt="CV" class="social-icon">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link social-link" href="https://www.linkedin.com/in/teo-beltran-nanziot/" target="_blank">
-                            <img src="img/redes/linkedin.png" alt="LinkedIn" class="social-icon">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link social-link" href="https://github.com/TeoBeltran/" target="_blank">
-                            <img src="img/redes/github.png" alt="GitHub" class="social-icon">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </aside>
 
-    <main>
+        <main class="ml-64 w-full p-8">
+            <section id="nombre" class="mb-24">
+                <h1 class="text-5xl font-bold mb-4">Teo Beltrán</h1>
+                <p class="text-xl text-gray-600">Técnico IT, Programador, Estudiante.</p>
+            </section>
 
-        <div class="primeraParte">
-            <div class="aboutMe" >
-                <div class="fototeo">
-                    <img src="img/redes/foto.png" alt="...">
+            <section id="sobre" class="mb-24">
+                <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
+                <p class="text-gray-700 leading-relaxed">Me llamo Teo Beltrán Nanziot, tengo 24 años y estoy recibido de Técnico Superior en Programación en la UTN.</p>
+                <p class="text-gray-700 leading-relaxed">También me encuentro estudiando Ciencia de Datos en la UBA.</p>
+            </section>
+
+            <section id="portfolio" class="mb-24">
+                <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/sistVentasT1.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">E-commerce Website</h3>
+                            <p class="text-gray-600 mb-4">Sistema de ventas básico para uso personal. Se encuentra en progreso.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">HTML</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">CSS</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
+                                    <a style="cursor: pointer;" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/agenda.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Agenda</h3>
+                            <p class="text-gray-600 mb-4">Sistema de tickets para soporte técnico. <br>
+                                Se pueden cargar y revisar pedidos del sistema y sus características</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
+                                    <a style="cursor: pointer;" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/hexaM.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Hexa Bank</h3>
+                            <p class="text-gray-600 mb-4">Aplicación Web que simula un home banking.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">Java</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">HTML</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">CSS</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">MySql</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">Tomcat</span>
+                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                    <a href="https://github.com/Gjuricich/hexa-bank" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/game1.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Juego</h3>
+                            <p class="text-gray-600 mb-4">Un pequeño juego estilo RPG en el que hay que avanzar en una mazmorra hasta llegar al final.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C++</span>
+                                <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm">SFML Library</span>
+                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                    <a href="https://github.com/TeoBeltran/juegosfml" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/searcha1.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Search Audit</h3>
+                            <p class="text-gray-600 mb-4">Programa que busca un archivo local relacionado a la auditoria de un punto de venta y verifica que esté completo.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                    <a href="https://github.com/TeoBeltran/SearchAudit" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/0negro.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">BackUps</h3>
+                            <p class="text-gray-600 mb-4">Sistema que recorre todas las carpetas especificadas de un Servidor FTP en busca de archivos .rar, guardando la fecha
+                                mas moderna por carpeta de los mismos en archivos de texto.
+                            </p>
+                            <p class="text-gray-600 mb-4">Se está trabajando en una versión en Python*
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
+                                    <a style="cursor: pointer;" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/flappy.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Flappy Bird</h3>
+                            <p class="text-gray-600 mb-4">Recreación del juego de celulares Flappy Bird.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Godot</span>
+                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                    <a href="https://github.com/TeoBeltran/FlappyBird" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/gestion2.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Gestión de Artículos</h3>
+                            <p class="text-gray-600 mb-4">Sistema con ABML artículos. <br>
+                                Incluye vista del lado del usuario. <br>
+                                Proyecto de escritorio</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C++</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                    <a href="https://github.com/TeoBeltran/GestionDeArticulos-Winform" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="img/proyCarr/NetPulse3.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">NetPulse</h3>
+                            <p class="text-gray-600 mb-4">Sistema con ABML artículos. <br>
+                                Incluye vista del lado del usuario. <br>
+                                Proyecto  Web</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                    <a href="https://github.com/TeoBeltran/NetPulse2" class="repo-tag" target="_blank">Repositorio</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
+            </section>
+
+            <section id="experiencia" class="mb-24">
+                <h2 class="text-3xl font-bold mb-6">Experiencia</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">Diciembre 2023 - Presente</div>
+                            <h3 class="font-bold text-xl mb-2">Soporte IT</h3>
+                            <p class="text-gray-600 mb-4">Solución de incidencias, manejo avanzado de SQL, asistencia técnica al usuario, mantenimiento de la documentación, monitoreo del sistema y diagnóstico de problemas, capacitación a clientes, gestión de incidencias en sistema de tickets, administración de copias de seguridad, configuración e instalación de software.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">Marzo 2021 - Noviembre 2023</div>
+                            <h3 class="font-bold text-xl mb-2">Asistente contable</h3>
+                            <p class="text-gray-600 mb-4">Registro facturas, pagos y cobranzas al sistema, gestión de fondos de inversión, conciliación de cuentas bancarias, generación de comprobantes en AFIP, registro de cobranza de tarjetas, gestión de informes de comprobantes de compra y venta, retenciones de ARBA y Aduana, Preparación de balance, Revisión de libro IVA ventas y libro IVA compras.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Excel</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Word</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="mb-24">
+                <h2 class="text-3xl font-bold mb-6">Skills</h2>
                 
-                <br>
-
-                <h1>Teo Beltrán Nanziot</h1>
-                <h2>Técnico Superior en Programación</h2>
                 
-                <div id="inicio"></div><br>
-                <br><br>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-4">Desarrollo Web y Frontend</h3>
+                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                            <span class="text-sm">HTML5</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                            <span class="text-sm">CSS3</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-sass text-4xl text-pink-500 mb-2"></i>
+                            <span class="text-sm">Sass</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-bootstrap text-4xl text-purple-500 mb-2"></i>
+                            <span class="text-sm">Bootstrap</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-js text-4xl text-yellow-400 mb-2"></i>
+                            <span class="text-sm">JavaScript</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-jquery text-4xl text-blue-500 mb-2"></i>
+                            <span class="text-sm">jQuery</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-code text-4xl text-blue-400 mb-2"></i>
+                            <span class="text-sm">AJAX</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-tailwind text-4xl text-teal-500 mb-2"></i>
+                            <span class="text-sm">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
                 
-                <div class="div2">
-                    <h3>Acerca de</h3>
-                    <div class="about-text">
-                        <p>
-                            Mi nombre es Teo Beltrán Nanziot, soy de Buenos Aires zona norte, tengo 23 años y vivo con mi familia.
-                        </p>
-                        <p>
-                            Soy egresado de la Tecnicatura Superior en Programación en la UTN. 
-                            También estudié Sistemas de Información de las Organizaciones en la UBA.
-                        </p>
-                        <p>
-                            Actualmente me encuentro trabajando como Especialista de Soporte Técnico IT. 
-                            Al mismo tiempo me encuentro desarrollando aplicaciones 
-                            web para clientes particulares tanto como proyectos personales. 
-                        </p>
-                        <p>
-                            Tengo un sólido manejo de C# y .NET, que utilizo junto con tecnologías como JavaScript, HTML y CSS, 
-                            y empleo SQL para gestionar las bases de datos.
-                        </p>
-                        <p>
-                            Como parte de mi enfoque en la programación, he adquirido experiencia en el uso de herramientas esenciales 
-                            como Git y Github para la gestión de proyectos y colaboración en equipo.
-                        </p>
-                        <p>
-                            Además, mi experiencia como asistente contable me proporcionó una sólida habilidad 
-                            en el uso de Excel y buena comprensión de la importancia de la precisión y la atención a los 
-                            detalles en la gestión de datos financieros.
-                        </p>
-                        <p>
-                            Respecto a mis gustos personales, me gustan mucho los animales, me gusta programar, los juegos de 
-                            computadora y también me encanta el fútbol.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="experiencia"></div><br><br>
-            
-            <div class="experiencia" id="">
-                <h3>Experiencia</h3>
-                <br>
-
-                <div class="expCard-container">
-                    <div class="expCard-item">
-                        <h4>Soporte IT</h4>
-                        <div class="date">2023 — 2024</div>
-                        <p>
-                            Solución de incidencias, manejo avanzado de SQL, asistencia técnica al usuario,
-                            mantenimiento de la documentación, monitoreo del sistema y diagnóstico de problemas,
-                            capacitación a clientes, gestión de incidencias en sistema de tickets, administración
-                            de copias de seguridad, configuración e instalación de software.
-                        </p>
-                        <div class="tags">
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">C#</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-4">Programación</h3>
+                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-python text-4xl text-blue-600 mb-2"></i>
                         </div>
-                    </div>
-                    <div class="expCard-item">
-                        <h4>Asistente contable</h4>
-                        <div class="date">2021 — 2023</div>
-                        <p>
-                            Registro facturas, pagos y cobranzas al sistema, gestión de fondos de inversión,
-                            conciliación de cuentas bancarias, generación de comprobantes en AFIP, registro de
-                            cobranza de tarjetas, gestión de informes de comprobantes de compra y venta,
-                            retenciones de ARBA y Aduana, Preparación de balance, Revisión de libro IVA ventas
-                            y libro IVA compras.
-                        </p>
-                        <div class="tags">
-                            <span class="skill-tag">Excel</span>
-                            <span class="skill-tag">Word</span>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-java text-4xl text-red-500 mb-2"></i>
+                            <span class="text-sm">Java</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-code text-4xl text-purple-600 mb-2"></i>
+                            <span class="text-sm">C#</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-code text-4xl text-blue-700 mb-2"></i>
+                            <span class="text-sm">C++</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div id="conocimientos">
-            <h3>Conocimientos</h3>
-            <div class="conocimientos1">
-                <div class="parteX">
-                    <h4>Desarrollo Web y Frontend</h4> <br>
-                    <div class="programIcon">
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/html.png" alt="HTML">
-                            <div class="iconText">HTML</div>
+                
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-4">Base de datos y herramientas</h3>
+                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-database text-4xl text-gray-600 mb-2"></i>
+                            <span class="text-sm">SQL</span>
                         </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/css.png" alt="CSS">
-                            <div class="iconText">CSS</div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
+                            <span class="text-sm">Git</span>
                         </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/sass.png" alt="SCSS">
-                            <div class="iconText">SASS</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/bootstrap.png" alt="Bootstrap">
-                            <div class="iconText">Bootstrap</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/jquery.png" alt="JQuery">
-                            <div class="iconText">jQuery</div>
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-github text-4xl text-gray-800 mb-2"></i>
+                            <span class="text-sm">GitHub</span>
                         </div>
                     </div>
                 </div>
-                <div class="parteX">
-                    <h4>Programación</h4> <br>
-                    <div class="programIcon">
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/cs.png" alt="C#">
-                            <div class="iconText">C#</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/cpp.png" alt="C++">
-                            <div class="iconText">C++</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/java.png" alt="Java">
-                            <div class="iconText">Java</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/js.png" alt="JavaScript">
-                            <div class="iconText">JavaScript</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/python.png" alt="Python">
-                            <div class="iconText">Python</div>
-                        </div>
-                    </div>
+            </section>
+
+            <section id="contacto" class="mb-24">
+                <h2 class="text-3xl font-bold mb-6">Contacto</h2>
+                <div class="flex flex-col space-y-4 max-w-lg">
+                    <a href="https://www.linkedin.com/in/teo-beltran-nanziot/" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:your.email@gmail.com" class="flex items-center space-x-3 text-gray-700 hover:text-red-500 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                        <span>Gmail</span>
+                    </a>
+                    <a href="https://github.com/TeoBeltran/" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1eO43XDG2RQ4GRgFR3xqWZ8DafDdOY0JJ/view?usp=drive_link" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-file-download text-2xl"></i>
+                        <!--i class="fas fa-cloud-download-alt text-2xl"></i-->
+                        <span>Curriculum Vitae</span>
+                    </a>
                 </div>
-                <div class="parteX">
-                    <h4>Base de Datos y Herramientas</h4> <br>
-                    <div class="programIcon">
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/sql.png" alt="SQL">
-                            <div class="iconText">SQL</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/github.png" alt="GitHub">
-                            <div class="iconText">GitHub</div>
-                        </div>
-                        <div class="iconContainer">
-                            <img src="img/conocimientos/git.png" alt="Git">
-                            <div class="iconText">Git</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <br>
+            </section>
+        </main>
+    </div>
 
-        <div id="proyectos">
-            <h3>Proyectos</h3>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
 
-            <div class="proyectoS">
-                <div class="seccionesX">
-                    <div class="parteA">
-                        <div id="carrusel">
-                            <div id="proyectosCarousel5" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/proyCarr/sistVentasT1.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/sistVentasT2.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/sistVentasT3.png" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel5" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel5" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            // Verifica si está el dark mode
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-                    <div class="parteB">
-                        <div class="expCard-item">
-                            <img src="img/proy/Ventas.png" alt="SysVta">
-                            <div class="details">
-                                <h4>Sistema ventas</h4>
-                                <p>Sistema de ventas básico  para uso personal. Se encuentra en progreso.</p>
-                                <div class="tags">
-                                    <span class="skill-tag">C#</span>
-                                    <span class="skill-tag">Javascript</span>
-                                    <span class="skill-tag">jQuery</span>
-                                    <span class="skill-tag">Ajax</span>
-                                    <span class="skill-tag">HTML</span>
-                                    <span class="skill-tag">CSS</span>
-                                    <span class="skill-tag">SQL</span>
-                                    <div class="tagsRepoX">
-                                        <span>Repositorio</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            // Función para cambiar el mode
+            const toggleTheme = () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    themeToggle.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.classList.add('dark-mode');
+                    themeToggle.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                }
+            };
 
-            <div class="proyectoS">
-                <div class="seccionesX">
-                    <div class="parteA2">
-                        <div id="carrusel">
-                            <div id="proyectosCarousel3" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/proyCarr/hexa1.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/hexa2.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/hexa3.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/hexa4.png" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel3" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel3" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="parteB">
-                        <div class="expCard-item">
-                            <img src="img/proy/hexa.png" alt="HexaBank">
-                            <div class="details">
-                                <h4>Hexa Bank</h4>
-                                <p>Aplicación Web similar a Home Banking. <br>
-                                    Aplicación donde se pueden dar de alta clientes y cuentas, hacer transferencias entre los mismos
-                                    y acceder a la función de prestamos, pudiendo pedir y/o pagar préstamos. <br>
-                                    Tiene vista de administrador, donde se encuentra el ABML y autorización de prestamos, y la vista del 
-                                    usuario, donde se pagan y piden prestamos. <br>
-                                    Para la misma se usó Tomcat 8.5.
-                                </p>
-                                <div class="tags">
-                                    <span class="skill-tag">Java</span>
-                                    <span class="skill-tag">HTML</span>
-                                    <span class="skill-tag">CSS</span>
-                                    <span class="skill-tag">Javascript</span>
-                                    <span class="skill-tag">MySQL</span>
-                                    <span class="skill-tag">Tomcat</span>
-                                    <div class="tagsRepo">
-                                        <a href="https://github.com/Gjuricich/hexa-bank" class="repo-tag" target="_blank">Repositorio</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            // Aplica el mode en localStorage al cargar la página
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme.matches)) {
+                body.classList.add('dark-mode');
+                themeToggle.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                themeToggle.classList.remove('dark-mode');
+            }
 
-            <div class="proyectoS">
-                <div class="seccionesX">
-                    <div class="parteA">
-                        <div id="carrusel">
-                            <div id="proyectosCarousel2" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/proyCarr/game1.png" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <!--p>Proyecto1</p-->
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/game2.png" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel2" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel2" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="parteB">
-                        <div class="expCard-item">
-                            <img src="img/proy/rpg.png" alt="juego">
-                            <div class="details">
-                                <h4>Juego</h4>
-                                <p>Un pequeño juego estilo RPG en el que hay que avanzar en una mazmorra hasta llegar al final.</p>
-                                <p>El objetivo es hacer la mayor cantidad de puntos posibles.</p>
-                                <div class="tags">
-                                    <span class="skill-tag">C++</span>
-                                    <span class="skill-tag">SFML Library</span>
-                                    <div class="tagsRepo">
-                                        <a href="https://github.com/TeoBeltran/juegosfml" class="repo-tag" target="_blank">Repositorio</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!--div class="proyectoS">
-                <div class="seccionesX">
-                    <div class="parteA">
-                        <div id="carrusel">
-                            <div id="proyectosCarousel" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/proyCarr/portfolio.png" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="parteB">
-                        <div class="expCard-item">
-                            <img src="img/proy/Portfolio.png" alt="favicon">
-                            <div class="details">
-                                <h4>Portfolio</h4>
-                                <p>Página web diseñada para mostrar mi portfolio con mis conocimientos, habilidades y experiencia.</p>
-                                <div class="tags">
-                                    <span class="skill-tag">HTML</span>
-                                    <span class="skill-tag">CSS</span>
-                                    <span class="skill-tag">Javascript</span>
-                                    <div class="tagsRepo">
-                                        <a href="https://github.com/TeoBeltran/Portfolio" class="repo-tag" target="_blank">Repositorio</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div-->
-
-            <div class="proyectoS">
-                <div class="seccionesX">
-                    <div class="parteA">
-                        <div id="carrusel">
-                            <div id="proyectosCarousel4" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/proyCarr/searcha1.png" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <!--p>Proyecto1</p-->
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/searcha2.png" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel4" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel4" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="parteB">
-                        <div class="expCard-item">
-                            <img src="img/proy/SearchAudit.png" alt="searchAu">
-                            <div class="details">
-                                <h4>SearchAudit</h4>
-                                <p>Programa que busca un archivo local en la computadora relacionado a la auditoria de un punto de venta.
-                                    El programa detecta si el ticket está completo o está con error.
-                                </p>
-                                <p>La auditoria del punto de venta es leída desde un archivo .dat, este programa deja elegir que archivo .dat leer. <br>
-                                    Una vez escogido, encuentra en el mismo si hubo algún error de caracteres, si hay algún ticket con errores, 
-                                    como pueden ser falta de pago, falta de vuelto, cierre con fallas, entre otros.</p>
-                                <div class="tags">
-                                    <span class="skill-tag">C#</span>
-                                    <div class="tagsRepo">
-                                        <a href="https://github.com/TeoBeltran/SearchAudit" class="repo-tag" target="_blank">Repositorio</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="proyectoS">
-                <div class="seccionesX">
-                    <div class="parteA">
-                        <div id="carrusel">
-                            <div id="proyectosCarousel6" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/proyCarr/gestion1.png" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <!--p>Proyecto1</p-->
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/gestion2.png" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel6" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel6" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="parteB">
-                        <div class="expCard-item">
-                            <img src="img/proy/Ventas.png" alt="SysVta">
-                            <div class="details">
-                                <h4>Gestión de Artículos</h4>
-                                <p>Sistema donde se pueden agregar, modificar y eliminar artículos.</p>
-                                <p>Incluye una vista apuntada al usuario que simula un carrito de compra.</p>
-                                <div class="tags">
-                                    <span class="skill-tag">C#</span>
-                                    <span class="skill-tag">C++</span>
-                                    <span class="skill-tag">SQL</span>
-                                    <div class="tagsRepo">
-                                        <a href="https://github.com/TeoBeltran/GestionDeArticulos-Web" class="repo-tag" target="_blank">Repositorio Web</a>
-                                    </div>
-                                    <div class="tagsRepo">
-                                        <a href="https://github.com/TeoBeltran/GestionDeArticulos-Winform" class="repo-tag" target="_blank">Repositorio Escritorio</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="proyectoS">
-                <div class="seccionesX">
-                    <div class="parteA">
-                        <div id="carrusel">
-                            <div id="proyectosCarousel7" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="img/proyCarr/NetPulse1.png" class="d-block w-100" alt="...">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <!--p>Proyecto1</p-->
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="img/proyCarr/NetPulse2.png" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel7" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel7" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="parteB">
-                        <div class="expCard-item">
-                            <img src="img/proy/Ventas.png" alt="SysVta">
-                            <div class="details">
-                                <h4>Net Pulse</h4>
-                                <p>Sistema donde se pueden agregar, modificar y eliminar artículos.</p><p>Incluye una vista apuntada al usuario que simula un carrito de compra.</p>
-                                <div class="tags">
-                                    <span class="skill-tag">C#</span>
-                                    <span class="skill-tag">SQL</span>
-                                    <div class="tagsRepo">
-                                        <a href="https://github.com/TeoBeltran/NetPulse2" class="repo-tag" target="_blank">Repositorio</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <footer id="bot">
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+            // Lee el click
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
 </body>
 </html>
