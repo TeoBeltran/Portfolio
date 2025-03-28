@@ -8,7 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilos para el interruptor */
+        body {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
         .theme-switch {
             width: 60px;
             height: 30px;
@@ -16,13 +19,15 @@
             border-radius: 15px;
             position: relative;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.5s;
         }
-
+    
+        /* Switch back dark */
         .theme-switch.dark-mode {
             background-color: #333;
         }
-
+    
+        /* Switch button */
         .switch-handle {
             width: 26px;
             height: 26px;
@@ -33,45 +38,54 @@
             left: 2px;
             transition: transform 0.3s;
         }
-
+    
         .theme-switch.dark-mode .switch-handle {
             transform: translateX(30px);
         }
-
-        /* Estilos para el modo oscuro */
+    
+        /* Body dark */
         body.dark-mode {
-            background-color: #121212;
+            /*background-color: #121212;*/
+            background-color: #2d2d2d; /* estilo Sidebar dark */
             color: #ffffff;
+            transition: background-color 0.5s, color 0.5s;
         }
-
+    
         body.dark-mode .bg-gray-100 {
             background-color: #121212;
         }
-
+    
+        /* Cards dark */
         body.dark-mode .bg-white {
             background-color: #1e1e1e;
             color: #ffffff;
         }
-
+    
+        /* Sidebar dark */
         body.dark-mode .bg-gray-800 {
-            background-color: #2d2d2d;
+            /*background-color: #2d2d2d;*/
+            background-color: #121212; /* estilo Body dark */
         }
-
+    
+        /* Texto dark */
         body.dark-mode .text-gray-600,
         body.dark-mode .text-gray-700 {
             color: #e0e0e0;
         }
-
+    
+        /* Hover dark */
         body.dark-mode .hover\:bg-gray-700:hover {
             background-color: #3d3d3d;
         }
-
+    
+        /* Hover experiencias dark */
         body.dark-mode .hover\:bg-gray-50:hover {
-            background-color: #2a2a2a;
+            background-color: #111111;
         }
     </style>
+    
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-300">
     <div class="flex">
         <aside class="fixed w-64 h-screen bg-gray-800 text-white p-6 overflow-y-auto">
             <nav>
@@ -109,7 +123,7 @@
             <section id="portfolio" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="img/proyCarr/sistVentasT1.png" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">E-commerce Website</h3>
@@ -124,7 +138,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="img/proyCarr/game1.png" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Juego</h3>
@@ -136,7 +150,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="img/proyCarr/hexa2.png" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Hexa Bank</h3>
@@ -152,7 +166,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="img/proyCarr/searcha1.png" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Search Audit</h3>
@@ -163,7 +177,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="img/proyCarr/gestion2.png" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">Gestión de Artículos</h3>
@@ -178,7 +192,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="img/proyCarr/NetPulse3.png" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">NetPulse</h3>
@@ -197,7 +211,7 @@
             <section id="experiencia" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Experiencia</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
                         <div class="p-6">
                             <div class="text-sm text-gray-500 mb-2">Diciembre 2023 - Presente</div>
                             <h3 class="font-bold text-xl mb-2">Soporte IT</h3>
@@ -209,7 +223,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
                         <div class="p-6">
                             <div class="text-sm text-gray-500 mb-2">Marzo 2021 - Noviembre 2023</div>
                             <h3 class="font-bold text-xl mb-2">Asistente contable</h3>
@@ -310,7 +324,11 @@
             <section id="contacto" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Contacto</h2>
                 <div class="flex flex-col space-y-4 max-w-lg">
-                    <a href="mailto:your.email@gmail.com" class="flex items-center space-x-3 text-gray-700 hover:text-blue-500 transition-colors">
+                    <a href="https://www.linkedin.com/in/teo-beltran-nanziot/" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:your.email@gmail.com" class="flex items-center space-x-3 text-gray-700 hover:text-red-500 transition-colors">
                         <i class="fas fa-envelope text-2xl"></i>
                         <span>Gmail</span>
                     </a>
@@ -318,12 +336,9 @@
                         <i class="fab fa-github text-2xl"></i>
                         <span>GitHub</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/teo-beltran-nanziot/" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
-                        <i class="fab fa-linkedin text-2xl"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1iNvorGdzgFm1kifu4zkK3NGxXJ1aq2nw/view?usp=drive_link" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
-                        <i class="fas fa-envelope text-2xl"></i>
+                    <a href="https://drive.google.com/file/d/1eO43XDG2RQ4GRgFR3xqWZ8DafDdOY0JJ/view?usp=drive_link" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-file-download text-2xl"></i>
+                        <!--i class="fas fa-cloud-download-alt text-2xl"></i-->
                         <span>Curriculum Vitae</span>
                     </a>
                 </div>
@@ -336,10 +351,10 @@
             const themeToggle = document.getElementById('theme-toggle');
             const body = document.body;
 
-            // Verifica si el usuario tiene una preferencia de tema oscuro en su sistema
+            // Verifica si está el dark mode
             const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-            // Función para cambiar el tema
+            // Función para cambiar el mode
             const toggleTheme = () => {
                 if (body.classList.contains('dark-mode')) {
                     body.classList.remove('dark-mode');
@@ -352,7 +367,7 @@
                 }
             };
 
-            // Aplica el tema guardado en localStorage al cargar la página
+            // Aplica el mode en localStorage al cargar la página
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme.matches)) {
                 body.classList.add('dark-mode');
@@ -362,7 +377,7 @@
                 themeToggle.classList.remove('dark-mode');
             }
 
-            // Escucha el clic en el interruptor para cambiar el tema
+            // Lee el click
             themeToggle.addEventListener('click', toggleTheme);
         });
     </script>
