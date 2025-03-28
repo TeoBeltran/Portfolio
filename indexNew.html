@@ -7,10 +7,72 @@
     <link rel="icon" href="img/favicon/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos para el interruptor */
+        .theme-switch {
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .theme-switch.dark-mode {
+            background-color: #333;
+        }
+
+        .switch-handle {
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+
+        .theme-switch.dark-mode .switch-handle {
+            transform: translateX(30px);
+        }
+
+        /* Estilos para el modo oscuro */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        body.dark-mode .bg-gray-100 {
+            background-color: #121212;
+        }
+
+        body.dark-mode .bg-white {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        body.dark-mode .bg-gray-800 {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode .text-gray-600,
+        body.dark-mode .text-gray-700 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .hover\:bg-gray-700:hover {
+            background-color: #3d3d3d;
+        }
+
+        body.dark-mode .hover\:bg-gray-50:hover {
+            background-color: #2a2a2a;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <div class="flex">
-        
         <aside class="fixed w-64 h-screen bg-gray-800 text-white p-6 overflow-y-auto">
             <nav>
                 <div class="mb-8">
@@ -23,11 +85,15 @@
                     <li><a href="#experiencia" class="block py-2 px-4 hover:bg-gray-700 rounded">Experiencia</a></li>
                     <li><a href="#skills" class="block py-2 px-4 hover:bg-gray-700 rounded">Skills</a></li>
                     <li><a href="#contacto" class="block py-2 px-4 hover:bg-gray-700 rounded">Contacto</a></li>
+                    <li class="flex items-center justify-center mt-8">
+                        <div id="theme-toggle" class="theme-switch">
+                            <div class="switch-handle"></div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </aside>
 
-        
         <main class="ml-64 w-full p-8">
             <section id="nombre" class="mb-24">
                 <h1 class="text-5xl font-bold mb-4">Teo Beltrán</h1>
@@ -44,8 +110,6 @@
                 <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <!--img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1" alt="Project 1" class="w-full h-48 object-cover">
-                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1" alt="Project 2" class="w-full h-48 object-cover"-->
                         <img src="img/proyCarr/sistVentasT1.png" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2">E-commerce Website</h3>
@@ -266,5 +330,41 @@
             </section>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Verifica si el usuario tiene una preferencia de tema oscuro en su sistema
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+            // Función para cambiar el tema
+            const toggleTheme = () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    themeToggle.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.classList.add('dark-mode');
+                    themeToggle.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                }
+            };
+
+            // Aplica el tema guardado en localStorage al cargar la página
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme.matches)) {
+                body.classList.add('dark-mode');
+                themeToggle.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                themeToggle.classList.remove('dark-mode');
+            }
+
+            // Escucha el clic en el interruptor para cambiar el tema
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
 </body>
 </html>
