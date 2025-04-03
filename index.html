@@ -6,84 +6,9 @@
     <title>Teo Beltrán</title>
     <link rel="icon" href="img/favicon/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-
-        .theme-switch {
-            width: 60px;
-            height: 30px;
-            background-color: #ccc;
-            border-radius: 15px;
-            position: relative;
-            cursor: pointer;
-            transition: background-color 0.5s;
-        }
-    
-        /* Switch back dark */
-        .theme-switch.dark-mode {
-            background-color: #333;
-        }
-    
-        /* Switch button */
-        .switch-handle {
-            width: 26px;
-            height: 26px;
-            background-color: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.3s;
-        }
-    
-        .theme-switch.dark-mode .switch-handle {
-            transform: translateX(30px);
-        }
-    
-        /* Body dark */
-        body.dark-mode {
-            /*background-color: #121212;*/
-            background-color: #2d2d2d; /* estilo Sidebar dark */
-            color: #ffffff;
-            transition: background-color 0.5s, color 0.5s;
-        }
-    
-        body.dark-mode .bg-gray-100 {
-            background-color: #121212;
-        }
-    
-        /* Cards dark */
-        body.dark-mode .bg-white {
-            background-color: #1e1e1e;
-            color: #ffffff;
-        }
-    
-        /* Sidebar dark */
-        body.dark-mode .bg-gray-800 {
-            /*background-color: #2d2d2d;*/
-            background-color: #121212; /* estilo Body dark */
-        }
-    
-        /* Texto dark */
-        body.dark-mode .text-gray-600,
-        body.dark-mode .text-gray-700 {
-            color: #e0e0e0;
-        }
-    
-        /* Hover dark */
-        body.dark-mode .hover\:bg-gray-700:hover {
-            background-color: #3d3d3d;
-        }
-    
-        /* Hover experiencias dark */
-        body.dark-mode .hover\:bg-gray-50:hover {
-            background-color: #111111;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="bg-gray-300">
     <div class="flex">
@@ -93,26 +18,29 @@
                     <img src="img/redes/foto.png" alt="Profile" class="w-30 h-30 rounded-full mx-auto mb-4 object-cover">
                 </div>
                 <ul class="space-y-4">
-                    <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded">Inicio</a></li>
-                    <li><a href="#sobre" class="block py-2 px-4 hover:bg-gray-700 rounded">Sobre mí</a></li>
-                    <li><a href="#portfolio" class="block py-2 px-4 hover:bg-gray-700 rounded">Portfolio</a></li>
-                    <li><a href="#experiencia" class="block py-2 px-4 hover:bg-gray-700 rounded">Experiencia</a></li>
-                    <li><a href="#skills" class="block py-2 px-4 hover:bg-gray-700 rounded">Skills</a></li>
-                    <li><a href="#contacto" class="block py-2 px-4 hover:bg-gray-700 rounded">Contacto</a></li>
-                    <li class="flex items-center justify-center mt-8">
-                        <div id="theme-toggle" class="theme-switch">
-                            <div class="switch-handle"></div>
-                        </div>
-                    </li>
+                    <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-house navicon"></i>  Inicio</a></li>
+                    <li><a href="#sobre" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-person navicon"></i>  Sobre mí</a></li>
+                    <li><a href="#portfolio" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-images navicon"></i>  Portfolio</a></li>
+                    <li><a href="#experiencia" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-file-earmark-text navicon"></i>  Experiencia</a></li>
+                    <li><a href="#skills" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-hdd-stack navicon"></i>  Skills</a></li>
+                    <li><a href="#contacto" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-envelope navicon"></i>  Contacto</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <main class="ml-64 w-full p-8">
-            <section id="nombre" class="mb-24">
-                <h1 class="text-5xl font-bold mb-4">Teo Beltrán</h1>
-                <p class="text-xl text-gray-600">Técnico IT, Programador, Estudiante.</p>
-            </section>
+        <main class="ml-64 w-full px-8">
+            <div class="theme-button-container">
+                <div id="theme-toggle" class="theme-switch">
+                    <div class="switch-handle"></div>
+                </div>
+            </div>
+            
+            <div class="header-container">
+                <section id="nombre" class="mb-24">
+                    <h1 class="text-5xl font-bold mb-4">Teo Beltrán</h1>
+                    <p class="text-xl text-gray-600">Técnico IT, Programador, Estudiante.</p>
+                </section>
+            </div>
 
             <section id="sobre" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
@@ -122,6 +50,21 @@
 
             <section id="portfolio" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
+
+                <!-- Modifica el div de filtros así: -->
+                <div class="FiltrosPortfolio flex flex-wrap justify-center gap-2 mb-8 pb-2">
+                    <span class="px-3 py-1 bg-white text-gray-800 rounded-full text-sm cursor-pointer hover:bg-gray-200 transition-colors filter-btn" data-filter="all">Todos</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm cursor-pointer hover:bg-purple-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="C#">C#</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm cursor-pointer hover:bg-purple-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="C++">C++</span>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm cursor-pointer hover:bg-yellow-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="SQL">SQL</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm cursor-pointer hover:bg-purple-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="Java">Java</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm cursor-pointer hover:bg-green-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="JavaScript">JavaScript</span>
+                    <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm cursor-pointer hover:bg-orange-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="HTML">HTML</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm cursor-pointer hover:bg-blue-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="CSS">CSS</span>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm cursor-pointer hover:bg-yellow-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="Python">Python</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm cursor-pointer hover:bg-blue-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="Godot">Godot</span>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="img/proyCarr/sistVentasT1.png" alt="Project 2" class="w-full h-48 object-cover">
@@ -134,7 +77,7 @@
                                 <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">JavaScript</span>
                                 <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">HTML</span>
                                 <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">CSS</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-red-400 text-neutral-100 rounded-full text-sm">
                                     <a style="cursor: pointer;" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -148,9 +91,9 @@
                             <p class="text-gray-600 mb-4">Sistema de tickets para soporte técnico. <br>
                                 Se pueden cargar y revisar pedidos del sistema y sus características</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-purple-400 text-neutral-100 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-yellow-400 text-neutral-100 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-red-400 text-neutral-100 rounded-full text-sm">
                                     <a style="cursor: pointer;" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -169,7 +112,7 @@
                                 <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">CSS</span>
                                 <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">MySql</span>
                                 <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">Tomcat</span>
-                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-stone-500 text-stone-100 rounded-full text-sm">
                                     <a href="https://github.com/Gjuricich/hexa-bank" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -184,7 +127,7 @@
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C++</span>
                                 <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm">SFML Library</span>
-                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-stone-500 text-stone-100 rounded-full text-sm">
                                     <a href="https://github.com/TeoBeltran/juegosfml" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -198,7 +141,7 @@
                             <p class="text-gray-600 mb-4">Programa que busca un archivo local relacionado a la auditoria de un punto de venta y verifica que esté completo.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
-                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-stone-500 text-stone-100 rounded-full text-sm">
                                     <a href="https://github.com/TeoBeltran/SearchAudit" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -216,7 +159,7 @@
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-red-400 text-neutral-100 rounded-full text-sm">
                                     <a style="cursor: pointer;" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -230,7 +173,7 @@
                             <p class="text-gray-600 mb-4">Recreación del juego de celulares Flappy Bird.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Godot</span>
-                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-stone-500 text-stone-100 rounded-full text-sm">
                                     <a href="https://github.com/TeoBeltran/FlappyBird" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -248,7 +191,7 @@
                                 <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
                                 <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C++</span>
                                 <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
-                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-stone-500 text-stone-100 rounded-full text-sm">
                                     <a href="https://github.com/TeoBeltran/GestionDeArticulos-Winform" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
@@ -265,42 +208,13 @@
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
                                 <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
-                                <span class="px-3 py-1 bg-stone-400 text-stone-950 rounded-full text-sm">
+                                <span class="px-3 py-1 bg-stone-500 text-stone-100 rounded-full text-sm">
                                     <a href="https://github.com/TeoBeltran/NetPulse2" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
                             </div>
                         </div>
                     </div>
                     
-                </div>
-            </section>
-
-            <section id="experiencia" class="mb-24">
-                <h2 class="text-3xl font-bold mb-6">Experiencia</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
-                        <div class="p-6">
-                            <div class="text-sm text-gray-500 mb-2">Diciembre 2023 - Presente</div>
-                            <h3 class="font-bold text-xl mb-2">Soporte IT</h3>
-                            <p class="text-gray-600 mb-4">Solución de incidencias, manejo avanzado de SQL, asistencia técnica al usuario, mantenimiento de la documentación, monitoreo del sistema y diagnóstico de problemas, capacitación a clientes, gestión de incidencias en sistema de tickets, administración de copias de seguridad, configuración e instalación de software.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
-                        <div class="p-6">
-                            <div class="text-sm text-gray-500 mb-2">Marzo 2021 - Noviembre 2023</div>
-                            <h3 class="font-bold text-xl mb-2">Asistente contable</h3>
-                            <p class="text-gray-600 mb-4">Registro facturas, pagos y cobranzas al sistema, gestión de fondos de inversión, conciliación de cuentas bancarias, generación de comprobantes en AFIP, registro de cobranza de tarjetas, gestión de informes de comprobantes de compra y venta, retenciones de ARBA y Aduana, Preparación de balance, Revisión de libro IVA ventas y libro IVA compras.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Excel</span>
-                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Word</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -388,6 +302,35 @@
                 </div>
             </section>
 
+            <section id="experiencia" class="mb-24">
+                <h2 class="text-3xl font-bold mb-6">Experiencia</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">Diciembre 2023 - Presente</div>
+                            <h3 class="font-bold text-xl mb-2">Soporte IT</h3>
+                            <p class="text-gray-600 mb-4">Solución de incidencias, manejo avanzado de SQL, asistencia técnica al usuario, mantenimiento de la documentación, monitoreo del sistema y diagnóstico de problemas, capacitación a clientes, gestión de incidencias en sistema de tickets, administración de copias de seguridad, configuración e instalación de software.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">Marzo 2021 - Noviembre 2023</div>
+                            <h3 class="font-bold text-xl mb-2">Asistente contable</h3>
+                            <p class="text-gray-600 mb-4">Registro facturas, pagos y cobranzas al sistema, gestión de fondos de inversión, conciliación de cuentas bancarias, generación de comprobantes en AFIP, registro de cobranza de tarjetas, gestión de informes de comprobantes de compra y venta, retenciones de ARBA y Aduana, Preparación de balance, Revisión de libro IVA ventas y libro IVA compras.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Excel</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Word</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="contacto" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Contacto</h2>
                 <div class="flex flex-col space-y-4 max-w-lg">
@@ -446,6 +389,42 @@
 
             // Lee el click
             themeToggle.addEventListener('click', toggleTheme);
+        });
+        
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('#portfolio .bg-gray-100');
+    
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Remover clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+                    
+                    // Filtrar proyectos
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all') {
+                            item.style.display = 'block';
+                        } else {
+                            const tags = item.querySelectorAll('.flex span:not(.repo-tag)');
+                            let hasTag = false;
+                            
+                            tags.forEach(tag => {
+                                if (tag.textContent === filterValue) {
+                                    hasTag = true;
+                                }
+                            });
+                            
+                            item.style.display = hasTag ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
         });
     </script>
 </body>
