@@ -21,8 +21,8 @@
                     <li><a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-house navicon"></i>  Inicio</a></li>
                     <li><a href="#sobre" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-person navicon"></i>  Sobre mí</a></li>
                     <li><a href="#portfolio" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-images navicon"></i>  Portfolio</a></li>
+                    <li><a href="#conocimientos" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-hdd-stack navicon"></i>  Conocimientos</a></li>
                     <li><a href="#experiencia" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-file-earmark-text navicon"></i>  Experiencia</a></li>
-                    <li><a href="#skills" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-hdd-stack navicon"></i>  Skills</a></li>
                     <li><a href="#contacto" class="block py-2 px-4 hover:bg-gray-700 rounded"><i class="bi bi-envelope navicon"></i>  Contacto</a></li>
                 </ul>
             </nav>
@@ -44,14 +44,14 @@
 
             <section id="sobre" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
-                <p class="text-gray-700 leading-relaxed">Me llamo Teo Beltrán Nanziot, tengo 24 años y estoy recibido de Técnico Superior en Programación en la UTN.</p>
-                <p class="text-gray-700 leading-relaxed">También me encuentro estudiando Ciencia de Datos en la UBA.</p>
+                <p class="text-gray-700 leading-relaxed">Me llamo Teo Beltrán Nanziot, tengo 24 años y estoy recibido de Técnico Superior en Programación 
+                    en la Universidad Tecnológica Nacional (UTN).</p>
+                <p class="text-gray-700 leading-relaxed">También me encuentro estudiando Ciencia de Datos en la Universidad de Buenos Aires (UBA).</p>
             </section>
 
             <section id="portfolio" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
 
-                <!-- Modifica el div de filtros así: -->
                 <div class="FiltrosPortfolio flex flex-wrap justify-center gap-2 mb-8 pb-2">
                     <span class="px-3 py-1 bg-white text-gray-800 rounded-full text-sm cursor-pointer hover:bg-gray-200 transition-colors filter-btn" data-filter="all">Todos</span>
                     <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm cursor-pointer hover:bg-purple-700 hover:text-neutral-100 transition-colors filter-btn" data-filter="C#">C#</span>
@@ -91,8 +91,8 @@
                             <p class="text-gray-600 mb-4">Sistema de tickets para soporte técnico. <br>
                                 Se pueden cargar y revisar pedidos del sistema y sus características</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-purple-400 text-neutral-100 rounded-full text-sm">C#</span>
-                                <span class="px-3 py-1 bg-yellow-400 text-neutral-100 rounded-full text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">C#</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">SQL</span>
                                 <span class="px-3 py-1 bg-red-400 text-neutral-100 rounded-full text-sm">
                                     <a style="cursor: pointer;" class="repo-tag" target="_blank">Repositorio</a>
                                 </span>
@@ -218,9 +218,8 @@
                 </div>
             </section>
 
-            <section id="skills" class="mb-24">
+            <!--section id="skills" class="mb-24">
                 <h2 class="text-3xl font-bold mb-6">Skills</h2>
-                
                 
                 <div class="mb-8">
                     <h3 class="text-2xl font-semibold mb-4">Desarrollo Web y Frontend</h3>
@@ -300,6 +299,95 @@
                         </div>
                     </div>
                 </div>
+            </section-->
+            
+            <section id="conocimientos" class="">
+                <h2 class="text-3xl font-bold">Conocimientos</h2>
+                
+                <div>
+                    <div class="grid grid-cols-3 gap-5 text-center mx-10 my-0">
+                        <!-- Desarrollo Web y Frontend -->
+                        <div class="p-12">
+                            <h4 class="flex justify-center items-center h-[50px] text-xl font-semibold mb-6">Desarrollo Web y Frontend</h4>
+                            <div class="grid grid-cols-2 auto-rows-fr gap-x-8 gap-y-12 justify-items-center">
+                                <div class="relative group">
+                                    <img src="skills/html.png" alt="HTML" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">HTML</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/css.png" alt="CSS" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">CSS</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/sass.png" alt="SCSS" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">SASS</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/bootstrap.png" alt="Bootstrap" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">Bootstrap</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/jquery.png" alt="JQuery" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">jQuery</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/tailwind.png" alt="Tailwind" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">Tailwind</div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Programación -->
+                        <div class="p-12">
+                            <h4 class="flex justify-center items-center h-[50px] text-xl font-semibold mb-6">Programación</h4>
+                            <div class="grid grid-cols-2 auto-rows-fr gap-x-8 gap-y-12 justify-items-center">
+                                <div class="relative group">
+                                    <img src="skills/cs.png" alt="C#" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">C#</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/cpp.png" alt="C++" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">C++</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/java.png" alt="Java" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">Java</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/js.png" alt="JavaScript" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">JavaScript</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/python.png" alt="Python" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">Python</div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Base de Datos y Herramientas -->
+                        <div class="p-12">
+                            <h4 class="flex justify-center items-center h-[50px] text-xl font-semibold mb-6">Base de Datos y Herramientas</h4>
+                            <div class="grid grid-cols-2 auto-rows-fr gap-x-8 gap-y-12 justify-items-center">
+                                <div class="relative group">
+                                    <img src="skills/sql.png" alt="SQL" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">SQL</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/jira.png" alt="Jira" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">Jira</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/github.png" alt="GitHub" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">GitHub</div>
+                                </div>
+                                <div class="relative group">
+                                    <img src="skills/git.png" alt="Git" class="max-w-[150px] h-auto p-2 transition-all duration-300 ease-in-out group-hover:bg-[rgba(27,35,48,0.5)] group-hover:shadow-lg group-hover:rounded-lg">
+                                    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-y-[150%] text-white px-2 py-1 rounded text-sm opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">Git</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section id="experiencia" class="mb-24">
@@ -326,6 +414,14 @@
                                 <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Excel</span>
                                 <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Word</span>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:bg-gray-50 transition-colors">
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2"></div>
+                            <h3 class="font-bold text-xl mb-2"></h3>
+                            <p class="text-gray-600 mb-4"></p>
                         </div>
                     </div>
                 </div>

@@ -94,3 +94,18 @@ body.dark-mode .hover\:bg-gray-50:hover {
     background-color: #4a5568 !important;
     color: white !important;
 }
+
+
+.skill-carousel-container {
+    width: 400%; /* 4 slides = 400% */
+}
+
+.skill-slide {
+    transition: opacity 0.3s ease;
+}
+
+.skill-category-btn.active {
+    background-color: #4a5568; /* bg-gray-700 */
+    color: white;
+}
+
